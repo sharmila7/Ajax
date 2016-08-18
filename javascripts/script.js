@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded",
 							message += " Doesn't like Chinese Food"
 						}
 						message += " and uses";
-						message += res.numberOfDisplays;
+						message += res.numberOfDisplays+1;
 						message += " displays for coding";
 						document.querySelector("#content").innerHTML =
 				 "<h2>" + message + "</h2>";
