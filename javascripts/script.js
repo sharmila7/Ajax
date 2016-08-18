@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded",
 					function (request) {
 						self.name = request.responseText;
 						console.log(self.name);
-						console.log("hello "+request.responseText);
 					});
 				document.querySelector("#content").innerHTML =
 				 "Hello"+self.name+"!";
