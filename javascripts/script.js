@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded",
 				$ajaxUtils.sendGetRequest("data/name.txt",
 					function (request) {
 						self.name = request.responseText;
-						console.log("hello");
+						console.log("hello"+self.name);
 					});
 				document.querySelector("#content").innerHTML =
 				 "Hello"+self.name+"!";
