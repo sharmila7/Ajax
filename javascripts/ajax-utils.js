@@ -23,20 +23,27 @@ var myHandler = null;
 
 //makes an Ajax GET request to 
 ajaxUtils.sendGetRequest = 
-function(requestUrl, responseHandler) {
+function(requestUrl, responseHandler, isJsonResponse) {
 	
 myHandler = responseHandler;
 request.onreadystatechange = function() {
-handleResponse(request, responseHandler);
+handleResponse(request, responseHandler, isJsonResponse);
 };
 request.open("GET", requestUrl, true);
 request.send(); //for POST only
 }
 
-function handleResponse(request, responseHandler) {
+function handleResponse(request, responseHandler, isJsonResponse) {
 if((request.readyState == 4) && (request.status == 200)){
-console.log("welcome");
-responseHandler(request);
+	if(isJsonResponse == undefined){
+		isJsonResponse = true;
+	}
+	if (isJsonResponse) {
+		responseHandler(JSON.parse(request.responseText));
+	}
+	else{
+		responseHandler(request.responseText);
+	}
 }
 }
 
