@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded",
 			function () {
 				var self = this;
 				var name = "";
-
+                                console.log("hi");
 				$ajaxUtils.sendGetRequest("/data/name.txt",
 					function (request) {
-						console.log("hi");
 						self.name = request.responseText;
 						cosole.log(self.name);
 					});
