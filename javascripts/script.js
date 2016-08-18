@@ -2,17 +2,26 @@ document.addEventListener("DOMContentLoaded",
 	function (event) {
 
 		//unobstrusive event binding
-		document.querySelector("button").addEventListener("click",function () {
+		document.querySelector("button").addEventListener("click",
+			function () {
 				var self = this;
 				var name = "";
-                                console.log("hi");
-				$ajaxUtils.sendGetRequest("data/name.txt",
-					function (request) {
-						self.name = request.responseText;
-						document.querySelector("#content").innerHTML =
-				 "Hello"+self.name+"!";
+
+				$ajaxUtils.sendGetRequest("data/name.json",
+					function (res) {
+						var message = res.firstName+" "+res.lastName;
+						if (res.likesChineseFood) {
+							message += "Likes Chinese Food";
+						}
+						else{
+							message += "Doesn't like Chinese Food"
+						}
+						message += "and uses";
+						message += res.numberOfDisplays;
+						message += "displays for coding";
 					});
-				
+				document.querySelector("#content").innerHTML =
+				 "<h2>" + message + "</h2>";
 			})
 	}
 	);
