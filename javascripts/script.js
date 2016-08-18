@@ -12,17 +12,17 @@ document.addEventListener("DOMContentLoaded",
 						var message = res.firstName+" "+res.lastName;
 						console.log(message);
 						if (res.likesChineseFood) {
-							message+= "Likes Chinese Food";
+							message += "Likes Chinese Food";
 						}
 						else{
-							message+= "Doesn't like Chinese Food"
+							message += "Doesn't like Chinese Food"
 						}
-						message+= "and uses";
-						message+= res.numberOfDisplays;
-						message+= "displays for coding";
-					});
-				document.querySelector("#content").innerHTML =
+						message += "and uses";
+						message += res.numberOfDisplays;
+						message += "displays for coding";
+						document.querySelector("#content").innerHTML =
 				 "<h2>" + message + "</h2>";
+					});
 			})
 	}
 	);
