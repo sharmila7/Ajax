@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded",
 				$ajaxUtils.sendGetRequest("data/name.txt",
 					function (request) {
 						self.name = request.responseText;
-						console.log(self.name);
-					});
-				document.querySelector("#content").innerHTML =
+						document.querySelector("#content").innerHTML =
 				 "Hello"+self.name+"!";
+					});
+				
 			})
 	}
 	);
