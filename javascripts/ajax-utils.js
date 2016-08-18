@@ -28,13 +28,13 @@ function(requestUrl, responseHandler) {
 myHandler = responseHandler;
 request.onreadystatechange = function() {
 handleResponse(request, myHandler);
-console("welcome");
 };
 request.open("GET", requestUrl, true);
 request.send(); //for POST only
 }
 
 function handleResponse(request, responseHandler) {
+console("welcome");
 if((request.readeState == 4) && (request.status == 200)){
 responseHandler(request);
 }
