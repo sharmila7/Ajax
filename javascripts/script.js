@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded",
 				var self = this;
 				var name = "";
 
-				$ajaxUtils.sendGetRequest("/data/name.txt",
+				$ajaxUtils.sendGetRequest("data/name.txt",
 					function (request) {
 						console.log("hi");
 						self.name = request.responseText;
