@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded",
 				$ajaxUtils.sendGetRequest("data/name.json",
 					function (res) {
 						var message = res.firstName+" "+res.lastName;
+						console.log("hi");
 						if (res.likesChineseFood) {
 							message += "Likes Chinese Food";
 						}
