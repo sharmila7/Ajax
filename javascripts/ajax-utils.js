@@ -27,7 +27,7 @@ function(requestUrl, responseHandler) {
 	
 myHandler = responseHandler;
 request.onreadystatechange = function() {
-handleResponse(request, myHandler);
+handleResponse(request, responseHandler);
 };
 request.open("GET", requestUrl, true);
 request.send(); //for POST only
