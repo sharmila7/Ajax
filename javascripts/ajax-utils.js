@@ -34,7 +34,7 @@ request.send(); //for POST only
 }
 
 function handleResponse(request, responseHandler) {
-if((request.readeState == 4) && (request.status == 200)){
+if((request.readyState == 4) && (request.status == 200)){
 console.log("welcome");
 responseHandler(request);
 }
